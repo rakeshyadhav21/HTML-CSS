@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Segoe UI, sans-serif;
+    font-family: oe UI, sans-serif;
 }
 
 /* NAVBAR */
@@ -179,16 +179,16 @@ nav {
 }
 
 /* HERO SECTION */
-
 .hero-slider{
     position: relative;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
     background: #000;
 }
 
-/* DARK OVERLAY */
-.hero-slider::before{
+/* OVERLAY */
+.hero-slider::after{
     content: "";
     position: absolute;
     inset: 0;
@@ -203,19 +203,20 @@ nav {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
     opacity: 0;
-    animation: slideShow 18s infinite;
+    z-index: 0;
+
+    animation: slideAnimation 18s infinite;
 }
 
-/* FIRST SLIDE VISIBLE IMMEDIATELY */
 .slide-1{
-    opacity: 1;
     background-image: url("./images/header_1.jpg");
     animation-delay: 0s;
 }
 
 .slide-2{
-    background-image: url("/images/header_2.jpg");
+    background-image: url("./images/header_2.jpg");
     animation-delay: 6s;
 }
 
@@ -224,15 +225,25 @@ nav {
     animation-delay: 12s;
 }
 
-/* CONTENT */
+/* HERO CONTENT */
 .hero-content{
     position: absolute;
     top: 50%;
     left: 10%;
+    right: 10%;
+
     transform: translateY(-50%);
     z-index: 2;
-    color: white;
-    max-width: 700px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: auto;
+    max-width: 1200px;
+
+    color: #fff;
+
     opacity: 0;
     animation: contentAnimation 18s infinite;
 }
@@ -265,12 +276,13 @@ nav {
 
 .hero-content .btn{
     display: inline-block;
-    padding: 14px 30px;
+    padding: 14px 32px;
     border: 2px solid #fff;
     color: #fff;
     text-decoration: none;
     letter-spacing: 2px;
-    transition: 0.4s;
+
+    transition: all 0.4s ease;
 }
 
 .hero-content .btn:hover{
@@ -278,22 +290,22 @@ nav {
     color: #000;
 }
 
-/* SLIDE ANIMATION (NO WHITE FLASH) */
-@keyframes slideShow{
+/* IMAGE ANIMATION */
+@keyframes slideAnimation{
 
     0%{
         opacity: 0;
     }
 
-    8%{
+    5%{
         opacity: 1;
     }
 
-    33%{
+    30%{
         opacity: 1;
     }
 
-    41%{
+    38%{
         opacity: 0;
     }
 
@@ -302,7 +314,7 @@ nav {
     }
 }
 
-/* TEXT ANIMATION */
+/* CONTENT ANIMATION */
 @keyframes contentAnimation{
 
     0%{
@@ -313,11 +325,11 @@ nav {
         opacity: 1;
     }
 
-    33%{
+    28%{
         opacity: 1;
     }
 
-    41%{
+    33.33%{
         opacity: 0;
     }
 
