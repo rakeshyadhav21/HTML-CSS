@@ -292,7 +292,7 @@ nav {
 @keyframes slideAnimation{
 
     0%{
-        opacity: 0;
+        opacity: 1;
     }
 
     5%{
@@ -316,23 +316,23 @@ nav {
 @keyframes contentAnimation{
 
     0%{
-        opacity: 0;
-    }
-
-    8%{
         opacity: 1;
+        transform: translateY(-50%) translateX(0);
     }
 
     28%{
         opacity: 1;
+        transform: translateY(-50%) translateX(0);
     }
 
     33.33%{
         opacity: 0;
+        transform: translateY(-50%) translateX(30px);
     }
 
     100%{
         opacity: 0;
+        transform: translateY(-50%) translateX(30px);
     }
 }
 
