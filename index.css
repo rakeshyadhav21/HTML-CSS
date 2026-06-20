@@ -203,10 +203,8 @@ nav {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     opacity: 0;
     z-index: 0;
-
     animation: slideAnimation 18s infinite;
 }
 
